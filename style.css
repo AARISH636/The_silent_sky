@@ -54,7 +54,7 @@
             justify-content: center; /* center horizontally */
         }
         .hero-image {
-            background-image: url("images/hero-image.jpg");
+            background-image: url('hero-image.jpg');
             background-size: cover;
             background-position: center;
             width: 100%;
@@ -126,39 +126,39 @@
         }
         /* Different backgrounds for each weather type */
         .phenomenon-card[data-weather="snow"] .phenomenon-image {
-            background-image: url(images/snowfall.png);
+            background-image: url('snowfall.png');
         }
 
         .phenomenon-card[data-weather="fog"] .phenomenon-image {
-            background-image: url(images/fog.png);
+            background-image: url('fog.png');
         }
 
         .phenomenon-card[data-weather="lightning"] .phenomenon-image {
-            background-image: url(images/lightning.png);
+            background-image: url('lightning.png');
         }
 
         .phenomenon-card[data-weather="hail"] .phenomenon-image {
-            background-image: url(images/hail.png);
+            background-image: url('hail.png');
         }
 
         .phenomenon-card[data-weather="monsoon"] .phenomenon-image {
-           background-image: url(images/monsoon.png);
+           background-image: url('monsoon.png');
         }
 
         .phenomenon-card[data-weather="aurora"] .phenomenon-image {
-           background-image: url(images/aurora.png);
+           background-image: url('aurora.png');
         }
 
         .phenomenon-card[data-weather="dust"] .phenomenon-image {
-            background-image: url(images/dust-strom.png);
+            background-image: url('dust-strom.png');
         }
 
         .phenomenon-card[data-weather="clouds"] .phenomenon-image {
-           background-image: url(images/cloud.jpg);
+           background-image: url('cloud.jpg');
         }
 
         .phenomenon-card[data-weather="glacier"] .phenomenon-image {
-            background-image: url(images/glacier-melt.webp);
+            background-image: url('glacier-melt.webp');
         }
 
         .phenomenon-content {
@@ -245,7 +245,7 @@
         height: 350px;
         border-radius: 8px;
         overflow: hidden;
-        background-image: url(images/cloud+data.jpg);
+        background-image: url('cloud+data.jpg');
         background-size: cover;
         background-position: center;
         display: flex;
@@ -317,4 +317,5 @@
 
         .fade-in {
             animation: fadeIn 0.8s ease-out;
+
         }
