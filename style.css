@@ -1,0 +1,320 @@
+ /* Reset and Variables */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-primary: #1c1f26;
+            --bg-secondary: #0d1821;
+            --bg-tertiary: #0c151d;
+            --color-primary: #344966;
+            --color-accent: #b4cded;
+            --color-white: #ffffff;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+            background: var(--bg-primary);
+            color: var(--color-white);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, var(--color-primary) 0%, var(--bg-secondary) 100%);
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 3rem;
+            font-weight: 300;
+            letter-spacing: 0.5em;
+            margin-bottom: 10px;
+        }
+
+        .header .subtitle {
+            font-size: 1rem;
+            color: var(--color-accent);
+            font-style: italic;
+            letter-spacing: 0.1em;
+        }
+
+        .hero {
+            padding: 40px 40px 40px 40px;
+            display: flex;
+            justify-content: center; /* center horizontally */
+        }
+        .hero-image {
+            background-image: url("images/hero-image.jpg");
+            background-size: cover;
+            background-position: center;
+            width: 100%;
+            max-width: 1330px; /* keeps it from getting too big */
+            aspect-ratio: 1 / 1; /* keeps it square without fixed height */
+            border-radius: 8px;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: flex-end;
+        }
+        .hero-quote {
+            background: linear-gradient(to top, rgba(52, 73, 102, 0.95), rgba(52, 73, 102, 0.8));
+            padding: 30px;
+            width: 100%;
+            text-align: center;
+            color: var(--color-accent);
+            font-style: italic;
+            font-size: 0.95rem;
+            line-height: 1.8;
+        }
+
+        /* Section Header */
+        .section-header {
+            background: linear-gradient(90deg, var(--color-primary) 0%, transparent 50%);
+            padding: 30px;
+            margin: 60px 0 30px 0;
+        }
+
+        .section-header h2 {
+            font-size: 1.8rem;
+            font-weight: 300;
+            letter-spacing: 0.3em;
+            color: var(--color-accent);
+            margin-bottom: 10px;
+        }
+
+        .section-header p {
+            color: rgba(180, 205, 237, 0.7);
+            font-size: 0.9rem;
+        }
+
+        /* Phenomena Grid - 3x3 */
+        .phenomena-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            padding: 0 0 40px 0;
+        }
+
+        .phenomenon-card {
+            background: var(--bg-secondary);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+
+        .phenomenon-card:hover {
+            transform: translateY(-5px);
+        }
+      .phenomenon-image {
+            width: 100%;
+            aspect-ratio: 355 / 321;
+            background: var(--color-primary);
+            position: relative;
+            background-size: cover; /* fill box, crop if needed */
+            background-position: center;
+        }
+        /* Different backgrounds for each weather type */
+        .phenomenon-card[data-weather="snow"] .phenomenon-image {
+            background-image: url(images/snowfall.png);
+        }
+
+        .phenomenon-card[data-weather="fog"] .phenomenon-image {
+            background-image: url(images/fog.png);
+        }
+
+        .phenomenon-card[data-weather="lightning"] .phenomenon-image {
+            background-image: url(images/lightning.png);
+        }
+
+        .phenomenon-card[data-weather="hail"] .phenomenon-image {
+            background-image: url(images/hail.png);
+        }
+
+        .phenomenon-card[data-weather="monsoon"] .phenomenon-image {
+           background-image: url(images/monsoon.png);
+        }
+
+        .phenomenon-card[data-weather="aurora"] .phenomenon-image {
+           background-image: url(images/aurora.png);
+        }
+
+        .phenomenon-card[data-weather="dust"] .phenomenon-image {
+            background-image: url(images/dust-strom.png);
+        }
+
+        .phenomenon-card[data-weather="clouds"] .phenomenon-image {
+           background-image: url(images/cloud.jpg);
+        }
+
+        .phenomenon-card[data-weather="glacier"] .phenomenon-image {
+            background-image: url(images/glacier-melt.webp);
+        }
+
+        .phenomenon-content {
+            padding: 20px;
+        }
+
+        .phenomenon-content h3 {
+            color: var(--color-accent);
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+            font-weight: 400;
+        }
+
+        .phenomenon-content p {
+            color: rgba(180, 205, 237, 0.7);
+            font-size: 0.9rem;
+        }
+
+        /* Echo Grid - 2x2 */
+        .echo-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr); /* exactly 2 columns */
+            gap: 20px;
+            padding-bottom: 40px;
+        }
+
+        .echo-card {
+            background: var(--bg-secondary);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .echo-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+
+        .echo-visual {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .echo-content {
+            padding: 20px;
+            color: var(--color-accent);
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .echo-content h3 {
+            margin: 0 0 10px;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .echo-content p {
+            margin: 0;
+            font-size: 0.95rem;
+            color: rgba(180, 205, 237, 0.8);
+            font-style: italic;
+            line-height: 1.4;
+        }
+
+        /* Cloud Section */
+        .cloud-section {
+        padding: 60px 0;
+        text-align: center;
+        }
+
+        .cloud-container {
+        position: relative;
+        height: 350px;
+        border-radius: 8px;
+        overflow: hidden;
+        background-image: url(images/cloud+data.jpg);
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        }
+
+        .cloud-text {
+        position: relative;
+        color: var(--bg-primary);
+        font-size: 2rem;
+        font-weight: 600;
+        letter-spacing: 0.2em;
+        text-align: center;
+        z-index: 2;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--bg-secondary);
+            padding: 40px 20px;
+            text-align: center;
+            margin-top: 60px;
+        }
+
+        .footer p {
+            color: var(--color-accent);
+            font-size: 1rem;
+            letter-spacing: 0.1em;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+                letter-spacing: 0.2em;
+            }
+
+            .phenomena-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .echo-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cloud-text {
+                font-size: 1.5rem;
+            }
+        }
+
+        @media (max-width: 1024px) and (min-width: 769px) {
+            .phenomena-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        /* Simple fade in animation */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            animation: fadeIn 0.8s ease-out;
+        }
